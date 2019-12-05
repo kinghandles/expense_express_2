@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   def create_row
     @category = Category.new
 
-    @category.category_name = params.fetch("category_name")
+    @category.category_name = params.fetch("category_name",nil)
 
     if @category.valid?
       @category.save

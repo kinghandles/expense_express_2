@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
 
   def show
     @expense = Expense.new
-    @group = Group.where({ :group_name => params.fetch("id_to_display")}).first
+    @group = Group.where({ :id => params.fetch("id_to_display")}).first
 
     render("group_templates/show.html.erb")
   end
