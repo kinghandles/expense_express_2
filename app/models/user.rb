@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  # Direct associations
+
+    # Direct associations
 
   has_many   :individual_expense_ledgers,
              :dependent => :destroy
@@ -9,6 +10,7 @@ class User < ApplicationRecord
   has_many   :expenses,
              :through => :individual_expense_ledgers,
              :source => :expense
+
 
   # Validations
 
