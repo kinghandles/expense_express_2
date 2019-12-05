@@ -1,5 +1,5 @@
 <h1>
-  Edit category #<%= @category.id %>
+  Edit <%= @category.category_name %>
 </h1>
 
 <hr>
@@ -21,6 +21,6 @@
 
 <hr>
 
-<a href="/categories">
+<a href="/categories/<%=@category.id%>">
   Go back
 </a>
