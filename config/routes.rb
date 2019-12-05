@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "individual_expense_ledgers#index"
   # Routes for the Category resource:
 
   # CREATE
