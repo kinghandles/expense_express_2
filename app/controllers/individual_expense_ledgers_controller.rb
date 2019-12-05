@@ -55,6 +55,22 @@ class IndividualExpenseLedgersController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @individual_expense_ledger = IndividualExpenseLedger.find(params.fetch("id_to_remove"))
+
+    @individual_expense_ledger.destroy
+
+    redirect_to("/users/#{@individual_expense_ledger.user_id}", notice: "IndividualExpenseLedger deleted successfully.")
+  end
+
+  def destroy_row_from_expense
+    @individual_expense_ledger = IndividualExpenseLedger.find(params.fetch("id_to_remove"))
+
+    @individual_expense_ledger.destroy
+
+    redirect_to("/expenses/#{@individual_expense_ledger.expense_id}", notice: "IndividualExpenseLedger deleted successfully.")
+  end
+
   def destroy_row
     @individual_expense_ledger = IndividualExpenseLedger.find(params.fetch("id_to_remove"))
 

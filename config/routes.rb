@@ -56,6 +56,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_expense/:id_to_remove", { :controller => "expenses", :action => "destroy_row" })
+  get("/delete_expense_from_category/:id_to_remove", { :controller => "expenses", :action => "destroy_row_from_category" })
+  get("/delete_expense_from_group/:id_to_remove", { :controller => "expenses", :action => "destroy_row_from_group" })
 
   #------------------------------
 
@@ -75,6 +77,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_individual_expense_ledger/:id_to_remove", { :controller => "individual_expense_ledgers", :action => "destroy_row" })
+  get("/delete_individual_expense_ledger_from_expense/:id_to_remove", { :controller => "individual_expense_ledgers", :action => "destroy_row_from_expense" })
+  get("/delete_individual_expense_ledger_from_user/:id_to_remove", { :controller => "individual_expense_ledgers", :action => "destroy_row_from_user" })
 
   #------------------------------
 
