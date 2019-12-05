@@ -28,7 +28,7 @@ class GroupDetailsController < ApplicationController
     if @group_detail.valid?
       @group_detail.save
 
-      redirect_to("/", :notice => "Group detail created successfully.")
+      redirect_to("/groups/<%= @group_detail.group_id %>", :notice => "Group detail created successfully.")
     else
       render("group_detail_templates/new_form_with_errors.html.erb")
     end
@@ -60,7 +60,7 @@ class GroupDetailsController < ApplicationController
 
     @group_detail.destroy
 
-    redirect_to("/group_details", :notice => "Group detail deleted successfully.")
+    redirect_to("/", :notice => "Group detail deleted successfully.")
   end
 
   def destroy_row_from_group

@@ -14,7 +14,7 @@
           <%= user.username %>
         </a>
 
-        <a href="/delete_group_detail/<%= user.id %>">
+        <a href="/delete_group_detail/<%= GroupDetail.where({ :user_id => user.id}).where({ :group_id => @group.id}).pluck(:id).first %>">
           Delete
         </a>
 
