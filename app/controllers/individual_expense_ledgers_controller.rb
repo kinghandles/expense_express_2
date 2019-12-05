@@ -10,7 +10,8 @@ class IndividualExpenseLedgersController < ApplicationController
   end
 
   def index
-    @individual_expense_ledgers = current_user.individual_expense_ledgers.page(params[:page]).per(10)
+    @q = current_user.individual_expense_ledgers.ransack(params[:q])
+    @individual_expense_ledgers = @q.result(:distinct => true).includes(:user, :expense).page(params[:page]).per(10)
 
     render("individual_expense_ledger_templates/index.html.erb")
   end
