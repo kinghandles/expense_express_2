@@ -6,6 +6,7 @@ class ExpensesController < ApplicationController
   end
 
   def show
+    @individual_expense_ledger = IndividualExpenseLedger.new
     @expense = Expense.find(params.fetch("id_to_display"))
 
     render("expense_templates/show.html.erb")
@@ -29,6 +30,40 @@ class ExpensesController < ApplicationController
       @expense.save
 
       redirect_back(:fallback_location => "/expenses", :notice => "Expense created successfully.")
+    else
+      render("expense_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_group
+    @expense = Expense.new
+
+    @expense.group_id = params.fetch("group_id")
+    @expense.category_id = params.fetch("category_id")
+    @expense.amount = params.fetch("amount")
+    @expense.description = params.fetch("description")
+
+    if @expense.valid?
+      @expense.save
+
+      redirect_to("/groups/#{@expense.group_id}", notice: "Expense created successfully.")
+    else
+      render("expense_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_category
+    @expense = Expense.new
+
+    @expense.group_id = params.fetch("group_id")
+    @expense.category_id = params.fetch("category_id")
+    @expense.amount = params.fetch("amount")
+    @expense.description = params.fetch("description")
+
+    if @expense.valid?
+      @expense.save
+
+      redirect_to("/categories/#{@expense.category_id}", notice: "Expense created successfully.")
     else
       render("expense_templates/new_form_with_errors.html.erb")
     end

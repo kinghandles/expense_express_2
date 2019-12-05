@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @expense = Expense.new
     @group = Group.find(params.fetch("id_to_display"))
 
     render("group_templates/show.html.erb")

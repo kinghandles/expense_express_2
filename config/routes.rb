@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/expenses/new", { :controller => "expenses", :action => "new_form" })
   post("/create_expense", { :controller => "expenses", :action => "create_row" })
+  post("/create_expense_from_category", { :controller => "expenses", :action => "create_row_from_category" })
+  post("/create_expense_from_group", { :controller => "expenses", :action => "create_row_from_group" })
 
   # READ
   get("/expenses", { :controller => "expenses", :action => "index" })
@@ -66,6 +68,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/individual_expense_ledgers/new", { :controller => "individual_expense_ledgers", :action => "new_form" })
   post("/create_individual_expense_ledger", { :controller => "individual_expense_ledgers", :action => "create_row" })
+  post("/create_individual_expense_ledger_from_expense", { :controller => "individual_expense_ledgers", :action => "create_row_from_expense" })
 
   # READ
   get("/individual_expense_ledgers", { :controller => "individual_expense_ledgers", :action => "index" })

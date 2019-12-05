@@ -33,6 +33,22 @@ class IndividualExpenseLedgersController < ApplicationController
     end
   end
 
+  def create_row_from_expense
+    @individual_expense_ledger = IndividualExpenseLedger.new
+
+    @individual_expense_ledger.expense_id = params.fetch("expense_id")
+    @individual_expense_ledger.user_id = params.fetch("user_id")
+    @individual_expense_ledger.notes = params.fetch("notes")
+
+    if @individual_expense_ledger.valid?
+      @individual_expense_ledger.save
+
+      redirect_to("/expenses/#{@individual_expense_ledger.expense_id}", notice: "IndividualExpenseLedger created successfully.")
+    else
+      render("individual_expense_ledger_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @individual_expense_ledger = IndividualExpenseLedger.find(params.fetch("prefill_with_id"))
 
