@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_individual_expense_ledger_from_expense/<%= individual_expense_ledger.id %>">
-          Delete
-        </a>
+        <%if current_user == individual_expense_ledger.user %>
+          <a href="/delete_individual_expense_ledger_from_expense/<%= individual_expense_ledger.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

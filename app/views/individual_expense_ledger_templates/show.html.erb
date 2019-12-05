@@ -13,17 +13,21 @@
 
       <!-- Edit link individual_expense_ledger start -->
       <div class="col">
-        <a href="/individual_expense_ledgers/<%= @individual_expense_ledger.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit individual expense ledger
-        </a>
+        <% if current_user == @individual_expense_ledger.user %>
+          <a href="/individual_expense_ledgers/<%= @individual_expense_ledger.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit individual_expense_ledger
+          </a>
+        <% end %>
       </div>
       <!-- Edit link individual_expense_ledger end -->
 
       <!-- Delete link individual_expense_ledger start -->
       <div class="col">
-        <a href="/delete_individual_expense_ledger/<%= @individual_expense_ledger.id %>" class="btn btn-block btn-outline-secondary">
-          Delete individual expense ledger
-        </a>
+        <% if current_user == @individual_expense_ledger.user %>
+          <a href="/delete_individual_expense_ledger/<%= @individual_expense_ledger.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete individual_expense_ledger
+          </a>
+        <% end %>
       </div>
       <!-- Delete link individual_expense_ledger end -->
     </div>
