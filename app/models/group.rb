@@ -6,6 +6,10 @@ class Group < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :categories,
+             :through => :expenses,
+             :source => :category
+
   # Validations
 
 end
