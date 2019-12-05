@@ -1,7 +1,23 @@
 <form action="/create_expense_from_group" method="post">
 
   <input type="hidden" name="group_id" value="<%= @group.id %>">
+  
+  <div class="form-group">
+    <label for="expense_name">
+      Title
+    </label>
 
+    <input type="text" id="expense_name" name="name" class="form-control" value="<%= @expense.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="expense_date">
+      Date
+    </label>
+
+    <input type="date" id="expense_date" name="date" class="form-control" value="<%= @expense.date %>">
+  </div>
+  
   <div class="form-group">
     <label for="category_id">
       Category
