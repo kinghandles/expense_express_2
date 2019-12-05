@@ -1,6 +1,8 @@
 class IndividualExpenseLedger < ApplicationRecord
   # Direct associations
 
+  belongs_to :expense
+
   belongs_to :user
 
   # Indirect associations

@@ -4,6 +4,8 @@ RSpec.describe Expense, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:individual_expense_ledgers) }
+
     end
 
     describe "InDirect Associations" do
