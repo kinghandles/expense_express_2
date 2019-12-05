@@ -60,6 +60,26 @@ Rails.application.routes.draw do
   get("/delete_expense_from_category/:id_to_remove", { :controller => "expenses", :action => "destroy_row_from_category" })
   get("/delete_expense_from_group/:id_to_remove", { :controller => "expenses", :action => "destroy_row_from_group" })
 
+  # Routes for the Individual expense ledger resource:
+
+  # CREATE
+  get("/individual_expense_ledgers/new", { :controller => "individual_expense_ledgers", :action => "new_form" })
+  post("/create_individual_expense_ledger", { :controller => "individual_expense_ledgers", :action => "create_row" })
+  post("/create_individual_expense_ledger_from_expense", { :controller => "individual_expense_ledgers", :action => "create_row_from_expense" })
+
+  # READ
+  get("/individual_expense_ledgers", { :controller => "individual_expense_ledgers", :action => "index" })
+  get("/individual_expense_ledgers/:id_to_display", { :controller => "individual_expense_ledgers", :action => "show" })
+
+  # UPDATE
+  get("/individual_expense_ledgers/:prefill_with_id/edit", { :controller => "individual_expense_ledgers", :action => "edit_form" })
+  post("/update_individual_expense_ledger/:id_to_modify", { :controller => "individual_expense_ledgers", :action => "update_row" })
+
+  # DELETE
+  get("/delete_individual_expense_ledger/:id_to_remove", { :controller => "individual_expense_ledgers", :action => "destroy_row" })
+  get("/delete_individual_expense_ledger_from_expense/:id_to_remove", { :controller => "individual_expense_ledgers", :action => "destroy_row_from_expense" })
+  get("/delete_individual_expense_ledger_from_user/:id_to_remove", { :controller => "individual_expense_ledgers", :action => "destroy_row_from_user" })
+
   #------------------------------
 
   devise_for :users
