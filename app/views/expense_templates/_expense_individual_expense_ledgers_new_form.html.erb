@@ -1,29 +1,16 @@
-<!-- Form individual_expense_ledger start -->
 <form action="/create_individual_expense_ledger_from_expense" method="post">
-<!-- Form individual_expense_ledger end -->
 
-  <!-- Label and input for expense_id start -->
-  <!-- Input for expense_id start -->
   <input type="hidden" name="expense_id" value="<%= @expense.id %>">
-  <!-- Input for expense_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for notes start -->
   <div class="form-group">
     <label for="notes">
       Notes
     </label>
 
-    <!-- Input for notes start -->
     <textarea id="notes" name="notes" class="form-control" rows="3"><%= @individual_expense_ledger.notes %></textarea>
-    <!-- Input for notes end -->
   </div>
-  <!-- Label and input for notes end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create individual expense ledger

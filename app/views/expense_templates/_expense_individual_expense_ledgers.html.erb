@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @expense.individual_expense_ledgers.each do |individual_expense_ledger| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/individual_expense_ledgers/<%= individual_expense_ledger.id %>">
           <%= individual_expense_ledger.expense_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == individual_expense_ledger.user %>
           <a href="/delete_individual_expense_ledger_from_expense/<%= individual_expense_ledger.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="expense_individual_expense_ledgers_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "expense_templates/expense_individual_expense_ledgers_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

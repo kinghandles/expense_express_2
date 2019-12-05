@@ -4,36 +4,24 @@
 
 <hr>
 
-<!-- Form individual_expense_ledger start -->
 <form action="/update_individual_expense_ledger/<%= @individual_expense_ledger.id %>" method="post">
-<!-- Form individual_expense_ledger end -->
 
-  <!-- Label and input for expense_id start -->
   <div class="form-group">
     <label for="expense_id">
       Expense
     </label>
 
-    <!-- Input for expense_id start -->
     <%= select_tag(:expense_id, options_from_collection_for_select(Expense.all, :id, :group_id, @individual_expense_ledger.expense_id), :class => "form-control") %>
-    <!-- Input for expense_id end -->
   </div>
-  <!-- Label and input for expense_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for notes start -->
   <div class="form-group">
     <label for="notes">
       Notes
     </label>
 
-    <!-- Input for notes start -->
     <textarea id="notes" name="notes" class="form-control" rows="3"><%= @individual_expense_ledger.notes %></textarea>
-    <!-- Input for notes end -->
   </div>
-  <!-- Label and input for notes end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update individual expense ledger

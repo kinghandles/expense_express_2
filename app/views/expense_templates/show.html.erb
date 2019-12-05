@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link expense start -->
       <div class="col">
         <a href="/expenses/<%= @expense.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit expense
         </a>
       </div>
-      <!-- Edit link expense end -->
 
-      <!-- Delete link expense start -->
       <div class="col">
         <a href="/delete_expense/<%= @expense.id %>" class="btn btn-block btn-outline-secondary">
           Delete expense
         </a>
       </div>
-      <!-- Delete link expense end -->
     </div>
 
     <dl>
       <dt>
         Group
       </dt>
-      <!-- Display group_id start -->
       <dd>
         <% if @expense.group.present? %>
           <a href="/groups/<%= @expense.group_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display group_id end -->
 
       <dt>
         Category
       </dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @expense.category.present? %>
           <a href="/categories/<%= @expense.category_id %>">
@@ -53,48 +46,38 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>
         Amount
       </dt>
-      <!-- Display amount start -->
       <dd>
         <%= @expense.amount %>
       </dd>
-      <!-- Display amount end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @expense.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@expense.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@expense.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "expense_templates/expense_individual_expense_ledgers" %>
@@ -106,4 +89,3 @@
     <%= render partial: "expense_templates/expense_users" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

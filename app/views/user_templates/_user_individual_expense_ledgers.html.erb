@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.individual_expense_ledgers.each do |individual_expense_ledger| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/individual_expense_ledgers/<%= individual_expense_ledger.id %>">
           <%= individual_expense_ledger.expense_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

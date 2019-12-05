@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "expense_templates/expenses_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,13 +58,10 @@
 
       <% @expenses.each do |expense| %>
       <tr>
-        <!-- Display expense.id start -->
         <td>
           <%= expense.id %>
         </td>
-        <!-- Display expense.id end -->
 
-        <!-- Display expense.group_id start -->
         <td>
           <% if expense.group.present? %>
             <a href="/groups/<%= expense.group.id %>">
@@ -76,9 +69,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display expense.group_id end -->
 
-        <!-- Display expense.category_id start -->
         <td>
           <% if expense.category.present? %>
             <a href="/categories/<%= expense.category.id %>">
@@ -86,31 +77,22 @@
             </a>
           <% end %>
         </td>
-        <!-- Display expense.category_id end -->
 
-        <!-- Display expense.amount start -->
         <td>
           <%= expense.amount %>
         </td>
-        <!-- Display expense.amount end -->
 
-        <!-- Display expense.description start -->
         <td>
           <%= expense.description %>
         </td>
-        <!-- Display expense.description end -->
 
-        <!-- Display expense.created_at start -->
         <td>
           <%= time_ago_in_words(expense.created_at) %> ago
         </td>
-        <!-- Display expense.created_at end -->
 
-        <!-- Display expense.updated_at start -->
         <td>
           <%= time_ago_in_words(expense.updated_at) %> ago
         </td>
-        <!-- Display expense.updated_at end -->
 
         <td>
           <a href="/expenses/<%= expense.id %>">

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @group.present? %>
   <% if @group.errors.any? %>
     <% @group.errors.full_messages.each do |message| %>
@@ -16,21 +15,15 @@
 
 <hr>
 
-<!-- Form group start -->
 <form action="/create_group" method="post">
-<!-- Form group end -->
 
-  <!-- Label and input for group_name start -->
   <div class="form-group">
     <label for="group_name">
       Group name
     </label>
 
-    <!-- Input for group_name start -->
     <input type="text" id="group_name" name="group_name" class="form-control" value="<%= @group.group_name %>">
-    <!-- Input for group_name end -->
   </div>
-  <!-- Label and input for group_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create group

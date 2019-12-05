@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link individual_expense_ledger start -->
       <div class="col">
         <% if current_user == @individual_expense_ledger.user %>
           <a href="/individual_expense_ledgers/<%= @individual_expense_ledger.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link individual_expense_ledger end -->
 
-      <!-- Delete link individual_expense_ledger start -->
       <div class="col">
         <% if current_user == @individual_expense_ledger.user %>
           <a href="/delete_individual_expense_ledger/<%= @individual_expense_ledger.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link individual_expense_ledger end -->
     </div>
 
     <dl>
       <dt>
         Expense
       </dt>
-      <!-- Display expense_id start -->
       <dd>
         <% if @individual_expense_ledger.expense.present? %>
           <a href="/expenses/<%= @individual_expense_ledger.expense_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display expense_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @individual_expense_ledger.user.present? %>
           <a href="/users/<%= @individual_expense_ledger.user_id %>">
@@ -57,37 +50,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Notes
       </dt>
-      <!-- Display notes start -->
       <dd>
         <%= @individual_expense_ledger.notes %>
       </dd>
-      <!-- Display notes end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@individual_expense_ledger.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@individual_expense_ledger.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
