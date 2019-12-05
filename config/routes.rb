@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  root :to => "individual_expense_ledgers#index"
   # Routes for the Category resource:
 
+  match("/", { :controller => "groups", :action => "index", :via => "get" })
+  
   # CREATE
   get("/categories/new", { :controller => "categories", :action => "new_form" })
   post("/create_category", { :controller => "categories", :action => "create_row" })
