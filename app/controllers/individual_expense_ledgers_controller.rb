@@ -59,7 +59,7 @@ class IndividualExpenseLedgersController < ApplicationController
     @individual_expense_ledger = IndividualExpenseLedger.find(params.fetch("id_to_modify"))
 
     @individual_expense_ledger.expense_id = params.fetch("expense_id")
-    @individual_expense_ledger.user_id = params.fetch("user_id")
+    
     @individual_expense_ledger.notes = params.fetch("notes")
 
     if @individual_expense_ledger.valid?
