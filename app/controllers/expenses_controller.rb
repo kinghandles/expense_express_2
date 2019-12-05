@@ -85,6 +85,8 @@ class ExpensesController < ApplicationController
   def update_row
     @expense = Expense.find(params.fetch("id_to_modify"))
 
+    @expense.name = params.fetch("name")
+    @expense.date = params.fetch("date")
     @expense.group_id = params.fetch("group_id")
     @expense.category_id = params.fetch("category_id")
     @expense.amount = params.fetch("amount")

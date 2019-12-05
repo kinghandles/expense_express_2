@@ -1,7 +1,7 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h1>
-      <%= @expense.id %> details
+      <%= @expense.name %> details
     </h1>
 
     <div class="row mb-3">
@@ -25,6 +25,20 @@
     </div>
 
     <dl>
+      <dt>
+        Title
+      </dt>
+      <dd>
+        <%= @expense.name %>
+      </dd>
+
+      <dt>
+        Date
+      </dt>
+      <dd>
+        <%= @expense.date %>
+      </dd>
+
       <dt>
         Group
       </dt>
