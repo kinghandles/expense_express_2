@@ -33,7 +33,7 @@ class IndividualExpenseLedgersController < ApplicationController
 
     @individual_expense_ledger.expense_id = params.fetch("expense_id")
     @individual_expense_ledger.user_id = params.fetch("user_id")
-    @individual_expense_ledger.notes = params.fetch("notes")
+    @individual_expense_ledger.notes = params.fetch("notes",nil)
 
     if @individual_expense_ledger.valid?
       @individual_expense_ledger.save
@@ -49,7 +49,7 @@ class IndividualExpenseLedgersController < ApplicationController
 
     @individual_expense_ledger.expense_id = params.fetch("expense_id")
     @individual_expense_ledger.user_id = params.fetch("user_id")
-    @individual_expense_ledger.notes = params.fetch("notes")
+    @individual_expense_ledger.notes = params.fetch("notes",nil)
 
     if @individual_expense_ledger.valid?
       @individual_expense_ledger.save

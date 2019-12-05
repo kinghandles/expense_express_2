@@ -31,7 +31,7 @@ class ExpensesController < ApplicationController
 
     if @expense.valid?
       @expense.save
-
+    
       redirect_back(:fallback_location => "/expenses", :notice => "Expense created successfully.")
     else
       render("expense_templates/new_form_with_errors.html.erb")
