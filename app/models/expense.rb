@@ -11,6 +11,10 @@ class Expense < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :individual_expense_ledgers,
+             :source => :user
+
   # Validations
 
   validates :group_id, :uniqueness => true
