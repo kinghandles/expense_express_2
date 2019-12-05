@@ -1,5 +1,5 @@
 <h1>
-  Edit group #<%= @group.id %>
+  Edit <%= @group.group_name %>
 </h1>
 
 <hr>
@@ -21,6 +21,6 @@
 
 <hr>
 
-<a href="/groups">
+<a href="/groups/<%=@group.id%>">
   Go back
 </a>
