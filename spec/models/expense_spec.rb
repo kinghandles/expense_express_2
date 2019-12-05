@@ -12,6 +12,8 @@ RSpec.describe Expense, type: :model do
 
     describe "Validations" do
 
+    it { should validate_uniqueness_of(:group_id) }
+
     it { should validate_presence_of(:group_id) }
       
     end
