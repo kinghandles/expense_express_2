@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for expense_id start -->
-    <input type="text" id="expense_id" name="expense_id" class="form-control">
+    <%= select_tag(:expense_id, options_from_collection_for_select(Expense.all, :id, :group_id, @individual_expense_ledger.expense_id), :class => "form-control") %>
     <!-- Input for expense_id end -->
   </div>
   <!-- Label and input for expense_id end -->
