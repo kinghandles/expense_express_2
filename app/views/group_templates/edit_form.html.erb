@@ -1,0 +1,32 @@
+<h1>
+  Edit group #<%= @group.id %>
+</h1>
+
+<hr>
+
+<!-- Form group start -->
+<form action="/update_group/<%= @group.id %>" method="post">
+<!-- Form group end -->
+
+  <!-- Label and input for group_name start -->
+  <div class="form-group">
+    <label for="group_name">
+      Group name
+    </label>
+
+    <!-- Input for group_name start -->
+    <input type="text" id="group_name" name="group_name" class="form-control" value="<%= @group.group_name %>">
+    <!-- Input for group_name end -->
+  </div>
+  <!-- Label and input for group_name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update group
+  </button>
+</form>
+
+<hr>
+
+<a href="/groups">
+  Go back
+</a>
