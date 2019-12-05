@@ -60,4 +60,13 @@ class GroupDetailsController < ApplicationController
 
     redirect_to("/group_details", :notice => "Group detail deleted successfully.")
   end
+
+  def destroy_row_from_group
+    @group_detail = GroupDetail.find(params.fetch("id_to_remove"))
+
+    @group_detail.destroy
+
+    redirect_to("/group_details", :notice => "Group detail deleted successfully.")
+  end
+
 end

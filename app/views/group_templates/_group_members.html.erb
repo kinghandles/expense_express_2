@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Members
+
+    <a data-toggle="collapse" href="#group_members_new_form">
+      Add member
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @group.users.each do |user| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <a>
+          <%= user.username %>
+        </a>
+
+        <a href="/delete_expense_from_group/<%= expense.id %>">
+          Delete
+        </a>
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="group_members_new_form">
+        <%= render partial: "group_templates/group_members_new_form" %>
+      </div>
+    </div>
+
+  </ul>
+</div>

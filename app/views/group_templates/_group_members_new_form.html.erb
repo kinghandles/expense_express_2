@@ -1,0 +1,52 @@
+<form action="/create_expense_from_group" method="post">
+
+  <input type="hidden" name="group_id" value="<%= @group.id %>">
+  
+  <div class="form-group">
+    <label for="expense_name">
+      Title
+    </label>
+
+    <input type="text" id="expense_name" name="name" class="form-control" value="<%= @expense.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="expense_date">
+      Date
+    </label>
+
+    <input type="date" id="expense_date" name="date" class="form-control" value="<%= @expense.date %>">
+  </div>
+  
+  <div class="form-group">
+    <label for="category_id">
+      Category
+    </label>
+
+    <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :category_name, @expense.category_id), :class => "form-control") %>
+    
+    <a href="/categories/new">
+        Add a new category
+    </a>
+    </div>
+
+  <div class="form-group">
+    <label for="amount">
+      Amount
+    </label>
+
+    <input type="text" id="amount" name="amount" class="form-control" value="<%= @expense.amount %>">
+  </div>
+
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <textarea id="description" name="description" class="form-control" rows="3"><%= @expense.description %></textarea>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create expense
+  </button>
+</form>

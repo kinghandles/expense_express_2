@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_group_detail/:id_to_remove", { :controller => "group_details", :action => "destroy_row" })
+  get("/delete_group_detail_from_group/:id_to_remove", { :controller => "group_details", :action => "destroy_row_from_group" })
 
   #------------------------------
 
