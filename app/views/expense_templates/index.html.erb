@@ -24,9 +24,6 @@
   <div class="col-md-12">
     <table class="table">
       <tr>
-        <th>
-          ID
-        </th>
 
         <th>
           Group
@@ -58,9 +55,6 @@
 
       <% @expenses.each do |expense| %>
       <tr>
-        <td>
-          <%= expense.id %>
-        </td>
 
         <td>
           <% if expense.group.present? %>

@@ -1,7 +1,7 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h1>
-      User #<%= @user.id %> details
+      <%= @user.username %> details
     </h1>
 
     <div class="row mb-3">
@@ -58,14 +58,4 @@
   </div>
 </div>
 
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "user_templates/user_individual_expense_ledgers" %>
-  </div>
-</div>
 
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "user_templates/user_expenses" %>
-  </div>
-</div>
