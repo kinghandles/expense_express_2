@@ -5,6 +5,8 @@ class IndividualExpenseLedger < ApplicationRecord
 
   # Validations
 
+  validates :expense_id, :presence => true
+
   validates :user_id, :uniqueness => true
 
   validates :user_id, :presence => true
