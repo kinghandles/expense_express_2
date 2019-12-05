@@ -1,0 +1,57 @@
+<h1>
+  Add a new individual expense ledger
+</h1>
+
+
+<hr>
+
+<!-- Form individual_expense_ledger start -->
+<form action="/create_individual_expense_ledger" method="post">
+<!-- Form individual_expense_ledger end -->
+
+  <!-- Label and input for expense_id start -->
+  <div class="form-group">
+    <label for="expense_id">
+      Expense
+    </label>
+
+    <!-- Input for expense_id start -->
+    <input type="text" id="expense_id" name="expense_id" class="form-control">
+    <!-- Input for expense_id end -->
+  </div>
+  <!-- Label and input for expense_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for notes start -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <!-- Input for notes start -->
+    <textarea id="notes" name="notes" class="form-control" rows="3"></textarea>
+    <!-- Input for notes end -->
+  </div>
+  <!-- Label and input for notes end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create individual expense ledger
+  </button>
+</form>
+
+<hr>
+
+<a href="/individual_expense_ledgers">
+  Go back
+</a>

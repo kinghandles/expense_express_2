@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Individual expense ledger #<%= @individual_expense_ledger.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/individual_expense_ledgers" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link individual_expense_ledger start -->
+      <div class="col">
+        <a href="/individual_expense_ledgers/<%= @individual_expense_ledger.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit individual expense ledger
+        </a>
+      </div>
+      <!-- Edit link individual_expense_ledger end -->
+
+      <!-- Delete link individual_expense_ledger start -->
+      <div class="col">
+        <a href="/delete_individual_expense_ledger/<%= @individual_expense_ledger.id %>" class="btn btn-block btn-outline-secondary">
+          Delete individual expense ledger
+        </a>
+      </div>
+      <!-- Delete link individual_expense_ledger end -->
+    </div>
+
+    <dl>
+      <dt>
+        Expense
+      </dt>
+      <!-- Display expense_id start -->
+      <dd>
+        <%= @individual_expense_ledger.expense_id %>
+      </dd>
+      <!-- Display expense_id end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @individual_expense_ledger.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Notes
+      </dt>
+      <!-- Display notes start -->
+      <dd>
+        <%= @individual_expense_ledger.notes %>
+      </dd>
+      <!-- Display notes end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@individual_expense_ledger.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@individual_expense_ledger.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
