@@ -1,5 +1,5 @@
 ActiveAdmin.register GroupDetail do
-  permit_params :user_id, :group_id
+  permit_params :user_id, :group_id, :username, :group_name
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

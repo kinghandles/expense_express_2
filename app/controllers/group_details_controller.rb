@@ -20,13 +20,15 @@ class GroupDetailsController < ApplicationController
   def create_row
     @group_detail = GroupDetail.new
 
-    @group_detail.user_id = params.fetch("user_id")
+    username = params.fetch("username")
+    @group_detail.username = username
+    @group_detail.user_id = User.where({ :username => username}).pluck(:id).first
     @group_detail.group_id = params.fetch("group_id")
 
     if @group_detail.valid?
       @group_detail.save
 
-      redirect_back(:fallback_location => "/group_details", :notice => "Group detail created successfully.")
+      redirect_to("/", :notice => "Group detail created successfully.")
     else
       render("group_detail_templates/new_form_with_errors.html.erb")
     end
