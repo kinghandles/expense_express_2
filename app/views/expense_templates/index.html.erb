@@ -66,13 +66,21 @@
 
         <!-- Display expense.group_id start -->
         <td>
-          <%= expense.group.group_name %>
+          <% if expense.group.present? %>
+            <a href="/groups/<%= expense.group.id %>">
+              <%= expense.group.group_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display expense.group_id end -->
 
         <!-- Display expense.category_id start -->
         <td>
-          <%= expense.category.category_name %>
+          <% if expense.category.present? %>
+            <a href="/categories/<%= expense.category.id %>">
+              <%= expense.category.category_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display expense.category_id end -->
 

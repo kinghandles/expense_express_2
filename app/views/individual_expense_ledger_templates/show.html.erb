@@ -38,7 +38,11 @@
       </dt>
       <!-- Display expense_id start -->
       <dd>
-        <%= @individual_expense_ledger.expense_id %>
+        <% if @individual_expense_ledger.expense.present? %>
+          <a href="/expenses/<%= @individual_expense_ledger.expense_id %>">
+            <%= @individual_expense_ledger.expense.group_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display expense_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @individual_expense_ledger.user_id %>
+        <% if @individual_expense_ledger.user.present? %>
+          <a href="/users/<%= @individual_expense_ledger.user_id %>">
+            <%= @individual_expense_ledger.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

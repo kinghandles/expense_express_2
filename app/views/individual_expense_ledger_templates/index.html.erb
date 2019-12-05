@@ -62,13 +62,21 @@
 
         <!-- Display individual_expense_ledger.expense_id start -->
         <td>
-          <%= individual_expense_ledger.expense.group_id %>
+          <% if individual_expense_ledger.expense.present? %>
+            <a href="/expenses/<%= individual_expense_ledger.expense.id %>">
+              <%= individual_expense_ledger.expense.group_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display individual_expense_ledger.expense_id end -->
 
         <!-- Display individual_expense_ledger.user_id start -->
         <td>
-          <%= individual_expense_ledger.user.email %>
+          <% if individual_expense_ledger.user.present? %>
+            <a href="/users/<%= individual_expense_ledger.user.id %>">
+              <%= individual_expense_ledger.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display individual_expense_ledger.user_id end -->
 

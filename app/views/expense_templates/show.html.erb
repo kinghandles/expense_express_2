@@ -34,7 +34,11 @@
       </dt>
       <!-- Display group_id start -->
       <dd>
-        <%= @expense.group_id %>
+        <% if @expense.group.present? %>
+          <a href="/groups/<%= @expense.group_id %>">
+            <%= @expense.group.group_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display group_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display category_id start -->
       <dd>
-        <%= @expense.category_id %>
+        <% if @expense.category.present? %>
+          <a href="/categories/<%= @expense.category_id %>">
+            <%= @expense.category.category_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display category_id end -->
 
