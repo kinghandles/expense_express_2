@@ -22,6 +22,8 @@ class ExpensesController < ApplicationController
   def create_row
     @expense = Expense.new
 
+    @expense.name = params.fetch("name")
+    @expense.date = params.fetch("date")
     @expense.group_id = params.fetch("group_id")
     @expense.category_id = params.fetch("category_id")
     @expense.amount = params.fetch("amount")
@@ -39,6 +41,8 @@ class ExpensesController < ApplicationController
   def create_row_from_group
     @expense = Expense.new
 
+    @expense.name = params.fetch("name")
+    @expense.date = params.fetch("date")
     @expense.group_id = params.fetch("group_id")
     @expense.category_id = params.fetch("category_id")
     @expense.amount = params.fetch("amount")
@@ -56,6 +60,8 @@ class ExpensesController < ApplicationController
   def create_row_from_category
     @expense = Expense.new
 
+    @expense.name = params.fetch("name")
+    @expense.date = params.fetch("date")
     @expense.group_id = params.fetch("group_id")
     @expense.category_id = params.fetch("category_id")
     @expense.amount = params.fetch("amount")

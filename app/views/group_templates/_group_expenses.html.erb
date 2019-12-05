@@ -11,7 +11,7 @@
     <% @group.expenses.each do |expense| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
         <a href="/expenses/<%= expense.id %>">
-          <%= expense.group_id %>
+          <%= expense.name %>
         </a>
 
         <a href="/delete_expense_from_group/<%= expense.id %>">
