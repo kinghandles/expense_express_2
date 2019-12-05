@@ -1,6 +1,9 @@
 class Expense < ApplicationRecord
   # Direct associations
 
+  belongs_to :category,
+             :required => false
+
   belongs_to :group
 
   has_many   :individual_expense_ledgers,
