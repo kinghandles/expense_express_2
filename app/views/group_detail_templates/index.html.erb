@@ -1,0 +1,74 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All group details
+    </h1>
+
+    <a href="/group_details/new" class="btn btn-block btn-outline-secondary">
+      Add a new group detail
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Group
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @group_details.each do |group_detail| %>
+      <tr>
+        <td>
+          <%= group_detail.id %>
+        </td>
+
+        <td>
+          <%= group_detail.user_id %>
+        </td>
+
+        <td>
+          <%= group_detail.group_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(group_detail.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(group_detail.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/group_details/<%= group_detail.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

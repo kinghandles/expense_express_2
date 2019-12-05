@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Group detail resource:
+
+  # CREATE
+  get("/group_details/new", { :controller => "group_details", :action => "new_form" })
+  post("/create_group_detail", { :controller => "group_details", :action => "create_row" })
+
+  # READ
+  get("/group_details", { :controller => "group_details", :action => "index" })
+  get("/group_details/:id_to_display", { :controller => "group_details", :action => "show" })
+
+  # UPDATE
+  get("/group_details/:prefill_with_id/edit", { :controller => "group_details", :action => "edit_form" })
+  post("/update_group_detail/:id_to_modify", { :controller => "group_details", :action => "update_row" })
+
+  # DELETE
+  get("/delete_group_detail/:id_to_remove", { :controller => "group_details", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Category resource:
 
   match("/", { :controller => "groups", :action => "index", :via => "get" })

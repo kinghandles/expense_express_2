@@ -5,13 +5,15 @@ class User < ApplicationRecord
   has_many   :individual_expense_ledgers,
              :dependent => :destroy
 
+  has_many :group_details, :dependent => :destroy
+
   # Indirect associations
 
   has_many   :expenses,
              :through => :individual_expense_ledgers,
              :source => :expense
 
-  has_many :groups, :through => :individual_expense_ledgers, :source => :group
+  has_many :groups, :through => :group_details, :source => :group
 
   # Validations
 

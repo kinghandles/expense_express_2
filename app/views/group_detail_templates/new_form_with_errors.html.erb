@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @group_detail.present? %>
+  <% if @group_detail.errors.any? %>
+    <% @group_detail.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new group detail
+</h1>
+
+
+<hr>
+
+<form action="/create_group_detail" method="post">
+
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @group_detail.user_id %>">
+  </div>
+
+  <div class="form-group">
+    <label for="group_id">
+      Group
+    </label>
+
+    <input type="text" id="group_id" name="group_id" class="form-control" value="<%= @group_detail.group_id %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create group detail
+  </button>
+</form>
+
+<hr>
+
+<a href="/group_details">
+  Go back
+</a>
