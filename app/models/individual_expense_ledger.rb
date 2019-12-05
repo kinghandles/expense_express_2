@@ -5,6 +5,8 @@ class IndividualExpenseLedger < ApplicationRecord
 
   belongs_to :user
 
+  belongs_to :group
+
   # Indirect associations
 
   # Validations

@@ -13,11 +13,15 @@ class Group < ApplicationRecord
   has_many   :expenses,
              :dependent => :destroy
 
+  has_many :individual_expense_ledgers, :dependent => :destroy
+
   # Indirect associations
 
   has_many   :categories,
              :through => :expenses,
              :source => :category
+
+  has_many :users, :through => :individual_expense_ledgers, :source => :user
 
   # Validations
 
