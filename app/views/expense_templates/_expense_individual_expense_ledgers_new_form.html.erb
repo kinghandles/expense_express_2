@@ -1,6 +1,7 @@
 <form action="/create_individual_expense_ledger_from_expense" method="post">
 
   <input type="hidden" name="expense_id" value="<%= @expense.id %>">
+  <input type="hidden" name="group_id" value="<%= @expense.group.id %>">
 
   <div class="form-group">
     <label for="username">
