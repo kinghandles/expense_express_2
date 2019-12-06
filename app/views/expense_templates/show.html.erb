@@ -105,3 +105,80 @@
     <%= render partial: "expense_templates/expense_users" %>
   </div>
 </div>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h3>
+      Settlement table
+    </h3>
+    <table class="table">
+      <tr>
+
+        <th>
+          Username
+        </th>
+
+        <th>
+          Paid
+        </th>
+        
+        <th>
+          Fair share
+        </th>
+
+        <th>
+          To send
+        </th>
+
+        <th>
+          To receive
+        </th>
+
+      </tr>
+
+      <% @expense.users.each do |user| %>
+      <tr>
+
+        <td>
+          <%= user.username %>
+        </td>
+
+        <td>
+          $<% if user.username == @expense.paid_by %>
+                <%= @expense.amount %>
+           <% else %>
+                0
+           <% end %>
+        </td>
+
+        <td>
+          $<%= (@expense.amount / @expense.users.count).round(2) %>
+        </td>
+
+        <td>
+          <% if user.username == @expense.paid_by %>
+            $0
+          <% else %>
+            $<%= (@expense.amount / @expense.users.count).round(2) %>
+          <% end %>
+        </td>
+        
+        <td>
+          <% if user.username == @expense.paid_by %>
+            <a>
+              $<%= (@expense.amount - @expense.amount / @expense.users.count).round(2) %>
+            </a>
+          <% else %>
+            <a>
+              $0
+            </a>
+          <% end %>
+        </td>
+        
+
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
