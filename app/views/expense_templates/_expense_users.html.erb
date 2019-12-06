@@ -14,6 +14,10 @@
           <%= user.username %>
         </a>
 
+        <a>
+          owes: $<%= @expense.amount / @expense.users.count %>
+        </a>
+
         <a href="/delete_individual_expense_ledger_from_expense/<%= IndividualExpenseLedger.where({ :user_id => user.id}).where({ :expense_id => @expense.id}).pluck(:id).first %>">
           Delete
         </a>

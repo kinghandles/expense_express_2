@@ -32,6 +32,10 @@
         <th>
           Category
         </th>
+        
+        <th>
+          Title
+        </th>
 
         <th>
           Amount
@@ -71,7 +75,15 @@
             </a>
           <% end %>
         </td>
-
+        
+        <td>
+          <% if expense.name.present? %>
+            <a>
+              <%= expense.name %>
+            </a>
+          <% end %>
+        </td>
+        
         <td>
           <%= expense.amount %>
         </td>
