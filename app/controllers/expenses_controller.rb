@@ -27,6 +27,7 @@ class ExpensesController < ApplicationController
     @expense.group_id = params.fetch("group_id")
     @expense.category_id = params.fetch("category_id")
     @expense.amount = params.fetch("amount")
+    @expense.paid_by = params.fetch("paid_by")
     @expense.description = params.fetch("description")
 
     if @expense.valid?
@@ -46,6 +47,7 @@ class ExpensesController < ApplicationController
     @expense.group_id = params.fetch("group_id")
     @expense.category_id = params.fetch("category_id")
     @expense.amount = params.fetch("amount")
+    @expense.paid_by = params.fetch("paid_by")
     @expense.description = params.fetch("description")
 
     if @expense.valid?
@@ -65,6 +67,7 @@ class ExpensesController < ApplicationController
     @expense.group_id = params.fetch("group_id")
     @expense.category_id = params.fetch("category_id")
     @expense.amount = params.fetch("amount")
+    @expense.paid_by = params.fetch("paid_by")
     @expense.description = params.fetch("description")
 
     if @expense.valid?
@@ -90,6 +93,7 @@ class ExpensesController < ApplicationController
     @expense.group_id = params.fetch("group_id")
     @expense.category_id = params.fetch("category_id")
     @expense.amount = params.fetch("amount")
+    @expense.paid_by = params.fetch("paid_by")
     @expense.description = params.fetch("description")
 
     if @expense.valid?

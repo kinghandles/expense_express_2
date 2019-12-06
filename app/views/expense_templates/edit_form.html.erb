@@ -47,6 +47,14 @@
   </div>
 
   <div class="form-group">
+    <label for="paid_by">
+      Paid by
+    </label>
+
+    <%= select_tag(:paid_by, options_from_collection_for_select(User.all, :username, :username, @expense.paid_by), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
     <label for="description">
       Description
     </label>
