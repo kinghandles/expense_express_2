@@ -1,0 +1,79 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Settlement #<%= @settlement.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/settlements" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/settlements/<%= @settlement.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit settlement
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_settlement/<%= @settlement.id %>" class="btn btn-block btn-outline-secondary">
+          Delete settlement
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @settlement.user_id %>
+      </dd>
+
+      <dt>
+        Expense
+      </dt>
+      <dd>
+        <%= @settlement.expense_id %>
+      </dd>
+
+      <dt>
+        To receive
+      </dt>
+      <dd>
+        <%= @settlement.to_receive %>
+      </dd>
+
+      <dt>
+        To pay
+      </dt>
+      <dd>
+        <%= @settlement.to_pay %>
+      </dd>
+
+      <dt>
+        Username
+      </dt>
+      <dd>
+        <%= @settlement.username %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@settlement.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@settlement.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

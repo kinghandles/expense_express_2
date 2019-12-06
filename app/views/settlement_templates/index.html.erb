@@ -1,0 +1,98 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All settlements
+    </h1>
+
+    <a href="/settlements/new" class="btn btn-block btn-outline-secondary">
+      Add a new settlement
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Expense
+        </th>
+
+        <th>
+          To receive
+        </th>
+
+        <th>
+          To pay
+        </th>
+
+        <th>
+          Username
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @settlements.each do |settlement| %>
+      <tr>
+        <td>
+          <%= settlement.id %>
+        </td>
+
+        <td>
+          <%= settlement.user_id %>
+        </td>
+
+        <td>
+          <%= settlement.expense_id %>
+        </td>
+
+        <td>
+          <%= settlement.to_receive %>
+        </td>
+
+        <td>
+          <%= settlement.to_pay %>
+        </td>
+
+        <td>
+          <%= settlement.username %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(settlement.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(settlement.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/settlements/<%= settlement.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

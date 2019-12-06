@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Settlement resource:
+
+  # CREATE
+  get("/settlements/new", { :controller => "settlements", :action => "new_form" })
+  post("/create_settlement", { :controller => "settlements", :action => "create_row" })
+
+  # READ
+  get("/settlements", { :controller => "settlements", :action => "index" })
+  get("/settlements/:id_to_display", { :controller => "settlements", :action => "show" })
+
+  # UPDATE
+  get("/settlements/:prefill_with_id/edit", { :controller => "settlements", :action => "edit_form" })
+  post("/update_settlement/:id_to_modify", { :controller => "settlements", :action => "update_row" })
+
+  # DELETE
+  get("/delete_settlement/:id_to_remove", { :controller => "settlements", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Group detail resource:
 
   # CREATE

@@ -1,0 +1,59 @@
+<h1>
+  Add a new settlement
+</h1>
+
+
+<hr>
+
+<form action="/create_settlement" method="post">
+
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="expense_id">
+      Expense
+    </label>
+
+    <input type="text" id="expense_id" name="expense_id" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="to_receive">
+      To receive
+    </label>
+
+    <input type="text" id="to_receive" name="to_receive" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="to_pay">
+      To pay
+    </label>
+
+    <input type="text" id="to_pay" name="to_pay" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="username">
+      Username
+    </label>
+
+    <input type="text" id="username" name="username" class="form-control">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create settlement
+  </button>
+</form>
+
+<hr>
+
+<a href="/settlements">
+  Go back
+</a>
