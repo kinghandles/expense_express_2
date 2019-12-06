@@ -2,17 +2,15 @@
 
   <input type="hidden" name="expense_id" value="<%= @expense.id %>">
 
-  <input type="hidden" name="user_id" value="<%= current_user.id %>">
-
   <div class="form-group">
-    <label for="notes">
-      Notes
+    <label for="username">
+      Username
     </label>
 
-    <textarea id="notes" name="notes" class="form-control" rows="3"><%= @individual_expense_ledger.notes %></textarea>
+    <input type="text" id="username" name="user_id">
   </div>
 
   <button class="btn btn-block btn-outline-secondary">
-    Create individual expense ledger
+    Add user
   </button>
 </form>

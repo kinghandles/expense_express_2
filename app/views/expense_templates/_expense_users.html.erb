@@ -1,17 +1,27 @@
 <div class="card">
   <div class="card-header d-flex align-items-center justify-content-between">
     Users
+
+    <a data-toggle="collapse" href="#expense_individual_expense_ledgers_new_form">
+      Add user
+    </a>
   </div>
 
   <ul class="list-group list-group-flush">
     <% @expense.users.each do |user| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <a href="/users/<%= user.id %>">
-          <%= user.email %>
+        <a>
+          <%= user.username %>
         </a>
 
       </li>
     <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="expense_individual_expense_ledgers_new_form">
+        <%= render partial: "expense_templates/expense_individual_expense_ledgers_new_form" %>
+      </div>
+    </div>
 
   </ul>
 </div>
