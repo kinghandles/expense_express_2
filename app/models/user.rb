@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :group_details, :dependent => :destroy
 
+  has_many :settlements, :dependent => :destroy
+
   # Indirect associations
 
   has_many   :expenses,

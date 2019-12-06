@@ -42,7 +42,7 @@
         </th>
 
         <th>
-          Your balance
+          You owe
         </th>
 
         <th>
@@ -65,11 +65,12 @@
         </td>
 
         <td>
-          <%= group.total_exp %>
+          $<%= group.total_exp %>
         </td>
 
         <td>
-          Your balance
+            $<%= (Settlement.where({ :user_id => current_user.id}).where({ :expense_id => group.expenses.pluck(:id) }).pluck(:to_pay).first).to_f - 
+                (Settlement.where({ :user_id => current_user.id}).where({ :expense_id => group.expenses.pluck(:id) }).pluck(:to_receive).first).to_f %>
         </td>
 
         <td>

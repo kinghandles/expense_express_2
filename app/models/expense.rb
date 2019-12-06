@@ -9,6 +9,8 @@ class Expense < ApplicationRecord
   has_many   :individual_expense_ledgers,
              :dependent => :destroy
 
+  has_many :settlements, :dependent => :destroy
+
   # Indirect associations
 
   has_many   :users,
@@ -17,8 +19,8 @@ class Expense < ApplicationRecord
 
   # Validations
 
-  
-
+  validates :paid_by, :presence => true
   validates :group_id, :presence => true
+  validates :group_id, :uniqueness => true
 
 end
