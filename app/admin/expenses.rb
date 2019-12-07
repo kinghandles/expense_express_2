@@ -1,6 +1,6 @@
 ActiveAdmin.register Expense do
 
- permit_params :group_id, :category_id, :amount, :description
+ permit_params :group_id, :category_id, :amount, :description, :paid_by
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

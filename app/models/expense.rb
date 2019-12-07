@@ -21,6 +21,6 @@ class Expense < ApplicationRecord
 
   validates :paid_by, :presence => true
   validates :group_id, :presence => true
-  validates :group_id, :uniqueness => true
+
 
 end
