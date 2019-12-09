@@ -11,7 +11,7 @@
         </a>
       </div>
       
-<% if @expense.users.include? current_user %>
+<% if @expense.group.users.include? current_user %>
       <div class="col">
         <a href="/expenses/<%= @expense.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit expense

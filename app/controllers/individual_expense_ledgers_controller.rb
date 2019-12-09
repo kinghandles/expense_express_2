@@ -49,8 +49,7 @@ class IndividualExpenseLedgersController < ApplicationController
     @individual_expense_ledger = IndividualExpenseLedger.new
 
     @individual_expense_ledger.expense_id = params.fetch("expense_id")
-    username = params.fetch("user_id")
-    @individual_expense_ledger.user_id = User.where({ :username => username}).pluck(:id).first
+    @individual_expense_ledger.user_id = params.fetch("user_id")
     @individual_expense_ledger.notes = params.fetch("notes",nil)
     @individual_expense_ledger.group_id = params.fetch("group_id")
 

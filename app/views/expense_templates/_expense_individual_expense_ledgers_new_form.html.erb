@@ -4,11 +4,11 @@
   <input type="hidden" name="group_id" value="<%= @expense.group.id %>">
 
   <div class="form-group">
-    <label for="username">
+    <label for="user_id">
       Username
     </label>
 
-    <%= select_tag(:username, options_from_collection_for_select(@expense.group.users, :id, :username, @individual_expense_ledger.user_id), :class => "form-control") %>
+    <%= select_tag(:user_id, options_from_collection_for_select(@expense.group.users, :id, :username, @individual_expense_ledger.user_id), :class => "form-control") %>
   </div>
 
   <button class="btn btn-block btn-outline-secondary">
