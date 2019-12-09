@@ -15,6 +15,14 @@
     <input type="text" id="group_name" name="group_name" class="form-control">
   </div>
 
+  <div class="form-group">
+    <label for="created_by">
+      Created_by
+    </label>
+
+    <input type="text" id="created_by" name="created_by", value = <%= current_user.username %> class="form-control">
+  </div>
+
   <button class="btn btn-block btn-outline-secondary">
     Create group
   </button>

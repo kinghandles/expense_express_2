@@ -23,6 +23,7 @@ class GroupsController < ApplicationController
     @group = Group.new
 
     @group.group_name = params.fetch("group_name")
+    @group.created_by = params.fetch("created_by")
 
     if @group.valid?
       @group.save

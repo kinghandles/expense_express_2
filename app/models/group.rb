@@ -26,5 +26,6 @@ class Group < ApplicationRecord
   has_many :users, :through => :group_details, :source => :user
 
   # Validations
-
+    validates :created_by, :presence => true
+    validates :created_by, :uniqueness => true
 end
