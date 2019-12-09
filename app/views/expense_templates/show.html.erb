@@ -6,9 +6,15 @@
 
     <div class="row mb-3">
       <div class="col">
-        <a href="/groups/<%=@expense.group_id %>" class="btn btn-block btn-outline-secondary">
-          Go back
-        </a>
+        <% if @expense.users.include? current_user %>
+            <a href="/groups/<%=@expense.group_id %>" class="btn btn-block btn-outline-secondary">
+                Go back
+            </a>
+        <% else %>
+            <a href="/" class="btn btn-block btn-outline-secondary">
+                Go back
+            </a>
+        <% end %>
       </div>
       
 <% if @expense.group.users.include? current_user %>

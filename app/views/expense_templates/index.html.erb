@@ -59,7 +59,7 @@
 
       <% @expenses.each do |expense| %>
       <tr>
-
+      <% if expense.users.include? current_user %>
         <td>
           <% if expense.group.present? %>
             <a href="/groups/<%= expense.group.id %>">
@@ -106,6 +106,8 @@
           </a>
         </td>
       </tr>
+
+      <% end %>
       <% end %>
     </table>
 
