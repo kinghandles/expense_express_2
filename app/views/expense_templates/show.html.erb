@@ -188,9 +188,31 @@
                     <% if Settlement.where({ :user_id => user.id}).where({ :expense_id => @expense.id}).pluck(:to_receive).first == (@expense.amount - @expense.amount / @expense.users.count).round(2) %>
                         Settled
                     <% else %>
-                        <a href = "/" >
-                            Update 
-                        </a>
+                         <form action="update_settlement/<%= Settlement.where({:user_id => user.id}).where({:expense_id => @expense.id}).pluck(:id).first %>" method="post">
+                            <input type= "hidden" name="user_id" value="<%= user.id %>">
+
+                            <input type="hidden"  name="expense_id"  value="<%= @expense.id %>">
+
+                            <input type="hidden" id="topay" name="to_pay"  value=
+                                " <% if user.username == @expense.paid_by %>
+                                    $0
+                                <% else %>
+                                    <%= (@expense.amount / @expense.users.count).round(2) %>
+                                <% end %>
+                                "
+                            >
+
+                            <input type="hidden" id="toreceive" name="to_receive"  value=
+                                " <% if user.username == @expense.paid_by %>
+                                    <%= (@expense.amount - @expense.amount / @expense.users.count).round(2) %>
+                                <% else %>
+                                    0
+                                <% end %>
+                                "
+                            >
+
+                            <button class= "btn btn-outline-secondary">Update</button>
+                        </form>
                     <% end %>
                 <% else %>
                 <form action="/create_settlement" method="post">

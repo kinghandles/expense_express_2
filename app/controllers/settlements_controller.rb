@@ -53,7 +53,7 @@ class SettlementsController < ApplicationController
     if @settlement.valid?
       @settlement.save
 
-      redirect_to("/settlements/#{@settlement.id}", :notice => "Settlement updated successfully.")
+      redirect_to("/expenses/#{@settlement.expense_id}", :notice => "Settlement updated successfully.")
     else
       render("settlement_templates/edit_form_with_errors.html.erb")
     end
