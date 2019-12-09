@@ -15,7 +15,7 @@ class User < ApplicationRecord
              :through => :individual_expense_ledgers,
              :source => :expense
 
-  has_many :groups, :through => :group_details, :source => :group
+  has_many :groups, :through => :individual_expense_ledgers, :source => :group
 
   # Validations
 

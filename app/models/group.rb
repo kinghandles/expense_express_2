@@ -23,7 +23,7 @@ class Group < ApplicationRecord
              :through => :expenses,
              :source => :category
 
-  has_many :users, :through => :group_details, :source => :user
+  has_many :users, :through => :individual_expense_ledgers, :source => :user
 
   # Validations
     validates :created_by, :presence => true
