@@ -67,4 +67,70 @@
   </div>
 </div>
 
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h3>
+      Summary
+    </h3>
+
+    <table class="table">
+      <tr>
+
+        <th>
+          Expenses
+        </th>
+
+        <th>
+          Date
+        </th>
+        
+        <th>
+          Amount
+        </th>
+
+        <th>
+          You owe
+        </th>
+
+        <th>
+          Go settle
+        </th>
+
+      </tr>
+
+      <% @group.expenses.each do |expense| %>
+      <tr>
+
+        <td>
+          <%= expense.name %>
+        </td>
+
+        <td>
+          <%= expense.date %>
+        </td>
+
+        <td>
+          $<% if expense.users.include? current_user %>
+                <%= @expense.amount %>
+           <% end %>
+        </td>
+
+        <td>
+          $<% if expense.users.include? current_user %>
+                <%= (Settlement.where({ :user_id => current_user.id}).where({ :expense_id => expense.id}).pluck(:to_pay).first).to_f - 
+                (Settlement.where({ :user_id => current_user.id}).where({ :expense_id => expense.id}).pluck(:to_receive).first).to_f %>
+           <% end %>
+        </td>
+        
+        <td>
+            
+        </td>
+
+      </tr>
+      <% end %>
+    </table>
+
+  </div>
+</div>
+
 

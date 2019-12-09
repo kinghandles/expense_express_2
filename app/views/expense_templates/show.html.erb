@@ -138,6 +138,7 @@
         </th>
 
         <th>
+          Status
         </th>
 
       </tr>
@@ -183,31 +184,35 @@
         
         <td>
             <% if user == current_user %>
-            <form action="/create_settlement" method="post">
-                <input type= "hidden" name="user_id" value="<%= user.id %>">
+                <% if Settlement.where({ :user_id => user.id}).where({ :expense_id => @expense.id}).first.present? %>
+                    Settled
+                <% else %>
+                <form action="/create_settlement" method="post">
+                    <input type= "hidden" name="user_id" value="<%= user.id %>">
 
-                <input type="hidden"  name="expense_id"  value="<%= @expense.id %>">
+                    <input type="hidden"  name="expense_id"  value="<%= @expense.id %>">
 
-                <input type="hidden" id="topay" name="to_pay"  value=
-                    " <% if user.username == @expense.paid_by %>
-                        $0
-                      <% else %>
-                        <%= (@expense.amount / @expense.users.count).round(2) %>
-                      <% end %>
-                    "
-                >
+                    <input type="hidden" id="topay" name="to_pay"  value=
+                        " <% if user.username == @expense.paid_by %>
+                            $0
+                        <% else %>
+                            <%= (@expense.amount / @expense.users.count).round(2) %>
+                        <% end %>
+                        "
+                    >
 
-                <input type="hidden" id="toreceive" name="to_receive"  value=
-                    " <% if user.username == @expense.paid_by %>
-                        <%= (@expense.amount - @expense.amount / @expense.users.count).round(2) %>
-                      <% else %>
-                        0
-                      <% end %>
-                    "
-                >
+                    <input type="hidden" id="toreceive" name="to_receive"  value=
+                        " <% if user.username == @expense.paid_by %>
+                            <%= (@expense.amount - @expense.amount / @expense.users.count).round(2) %>
+                        <% else %>
+                            0
+                        <% end %>
+                        "
+                    >
 
-                <button class= "btn btn-outline-secondary">Settle</button>
-            </form>
+                    <button class= "btn btn-outline-secondary">Settle</button>
+                </form>
+                <% end %>
             <% end %>
         </td>
 
