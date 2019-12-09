@@ -29,5 +29,6 @@ class Group < ApplicationRecord
 
   # Validations
     validates :created_by, :presence => true
-    validates :created_by, :uniqueness => true
+    validates :group_name, :presence => true
+    
 end
