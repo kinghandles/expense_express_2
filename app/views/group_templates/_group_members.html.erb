@@ -8,13 +8,13 @@
   </div>
 
   <ul class="list-group list-group-flush">
-    <% @group.users.uniq.each do |user| %>
+    <% @group.members.uniq.each do |member| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
         <a>
-          <%= user.username %>
+          <%= member.username %>
         </a>
 
-        <a href="/delete_group_detail/<%= GroupDetail.where({ :user_id => user.id}).where({ :group_id => @group.id}).pluck(:id).first %>">
+        <a href="/delete_individual_expense_ledger/<%= IndividualExpenseLedger.where({ :user_id => member.id}).where({ :group_id => @group.id}).pluck(:id).first %>">
           Delete
         </a>
 

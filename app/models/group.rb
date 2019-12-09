@@ -25,6 +25,8 @@ class Group < ApplicationRecord
 
   has_many :users, :through => :individual_expense_ledgers, :source => :user
 
+  has_many( :members, {:class_name => "User", :through => :group_details, :source=> :user})
+
   # Validations
     validates :created_by, :presence => true
     validates :created_by, :uniqueness => true

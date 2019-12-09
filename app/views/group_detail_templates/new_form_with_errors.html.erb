@@ -10,7 +10,7 @@
 <% end %>
 
 <h1>
-  Add a new group detail
+  Add a group member
 </h1>
 
 
@@ -31,7 +31,7 @@
       Group
     </label>
 
-    <input type="text" id="group_id" name="group_id" class="form-control" value="<%= @group_detail.group_id %>">
+    <input type="text" id="group_id" name="group_id" class="form-control" value="<%= @group_detail.group.group_name %>">
   </div>
 
   <button class="btn btn-block btn-outline-secondary">
@@ -41,6 +41,6 @@
 
 <hr>
 
-<a href="/group_details">
+<a href="/">
   Go back
 </a>
