@@ -188,7 +188,7 @@
                     <% if Settlement.where({ :user_id => user.id}).where({ :expense_id => @expense.id}).pluck(:to_receive).first == (@expense.amount - @expense.amount / @expense.users.count).round(2) %>
                         Settled
                     <% else %>
-                         <form action="update_settlement/<%= Settlement.where({:user_id => user.id}).where({:expense_id => @expense.id}).pluck(:id).first %>" method="post">
+                         <form action="/update_settlement/<%= Settlement.where({:user_id => user.id}).where({:expense_id => @expense.id}).pluck(:id).first %>" method="post">
                             <input type= "hidden" name="user_id" value="<%= user.id %>">
 
                             <input type="hidden"  name="expense_id"  value="<%= @expense.id %>">
