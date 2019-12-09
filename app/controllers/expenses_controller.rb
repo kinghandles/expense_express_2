@@ -128,4 +128,5 @@ class ExpensesController < ApplicationController
 
     redirect_to("/expenses", :notice => "Expense deleted successfully.")
   end
+
 end

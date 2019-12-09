@@ -4,4 +4,6 @@ class Settlement < ApplicationRecord
 
     validates :user_id, :presence => true
     validates :expense_id, :presence => true
+
+
 end

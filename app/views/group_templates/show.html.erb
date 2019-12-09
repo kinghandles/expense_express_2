@@ -127,7 +127,7 @@
                 <% if Settlement.where({ :user_id => current_user.id}).where({ :expense_id => expense.id}).first.present? %>
                     Settled
                 <% else %>
-                    <a href="/expenses/#{expense.id}">
+                    <a href="/expenses/<%=expense.id%>">
                         Go settle 
                     </a>
                 <% end %>

@@ -22,5 +22,20 @@ class Expense < ApplicationRecord
   validates :paid_by, :presence => true
   validates :group_id, :presence => true
 
+  # Methods
+  
+  def fair_share
+    fair_share = (self.amount / self.users.count).round(2)
+    return fair_share
+  end
+
+  def to_send
+    return (self.amount / self.users.count).round(2)
+  end
+
+  def to_receive
+    return (self.amount - self.amount / self.users.count).round(2)
+  end
+
 
 end
