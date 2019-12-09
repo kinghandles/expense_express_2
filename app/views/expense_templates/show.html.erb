@@ -185,7 +185,13 @@
         <td>
             <% if user == current_user %>
                 <% if Settlement.where({ :user_id => user.id}).where({ :expense_id => @expense.id}).first.present? %>
-                    Settled
+                    <% if Settlement.where({ :user_id => user.id}).where({ :expense_id => @expense.id}).pluck(:to_receive).first == (@expense.amount - @expense.amount / @expense.users.count).round(2) %>
+                        Settled
+                    <% else %>
+                        <a href = "/" >
+                            Update 
+                        </a>
+                    <% end %>
                 <% else %>
                 <form action="/create_settlement" method="post">
                     <input type= "hidden" name="user_id" value="<%= user.id %>">
