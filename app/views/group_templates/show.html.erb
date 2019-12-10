@@ -89,7 +89,11 @@
         </th>
 
         <th>
-          You owe
+          You owe(+) / receive(-)
+        </th>
+
+        <th>
+          To/from
         </th>
 
         <th>
@@ -122,6 +126,16 @@
            <% end %>
         </td>
         
+        <td>
+            <% if expense.users.include? current_user %>
+                <% if expense.paid_by == current_user.username %>
+                    <%= expense.users.pluck(:username).to_sentence %>
+                <% else %>
+                    <%= expense.paid_by %>
+                <% end %>
+            <% end %>
+        </td>
+
         <td>
             <% if expense.users.include? current_user %>
                 <% if Settlement.where({ :user_id => current_user.id}).where({ :expense_id => expense.id}).first.present? %>
