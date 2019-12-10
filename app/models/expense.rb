@@ -37,5 +37,10 @@ class Expense < ApplicationRecord
     return (self.amount - self.amount / self.users.count).round(2)
   end
 
+  def find_payer
+    arr = self.users.pluck(:username)
+    arr.delete(self.paid_by)
+    return arr.to_sentence
+  end
 
 end

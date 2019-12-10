@@ -129,7 +129,7 @@
         <td>
             <% if expense.users.include? current_user %>
                 <% if expense.paid_by == current_user.username %>
-                    <%= expense.users.pluck(:username).to_sentence %>
+                    <%= expense.find_payer %>
                 <% else %>
                     <%= expense.paid_by %>
                 <% end %>
